@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import BuggyCounter from "./Components/BuggyCounter";
+import ConditionalCompponent from './Components/ConditionalComponent';
+import ErrorBoundary from './Components/ErrorBoundary';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <p> This is text </p>
+
+      <ErrorBoundary themeColor='green'>
+        <BuggyCounter />
+      </ErrorBoundary>
+      <ErrorBoundary themeColor='yellow'>
+        <BuggyCounter />
+      </ErrorBoundary>
+      <ErrorBoundary themeColor='blue'>
+        <BuggyCounter />
+      </ErrorBoundary>
+      <ConditionalCompponent color="red" />
+      <ConditionalCompponent color="blue" />
+      <ConditionalCompponent />
+    </div >
   );
 }
 
-export default App;
+export default App
